@@ -9,10 +9,12 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "html2pdf.js": "^0.9.3",
     "vue": "^2.6.11",
     "vuetify": "^2.4.0"
   },
   "devDependencies": {
+    "@mdi/font": "^5.9.55",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
