@@ -208,7 +208,7 @@
   </v-app>
 </template>
 
-<script src="html2pdf.bundle.min.js"></script>
+<script src="./html2pdf.bundle.min.js"></script>
 
 <script>
 export default {
