@@ -7,13 +7,13 @@
     >
       <div
         style="position: fixed; right: 1em; top: 1em; z-index: 999"
-        class="d-print-none"
+        class="d-print-none d-flex flex-column flex-md-row"
       >
         <v-btn
           fab
           dark
           small
-          class="ml-2"
+          class="ma-1 ml-md-2"
           color="deep-purple darken-4"
           href="https://github.com/stanislawzambrzycki/stanislaw-zambrzycki-cv"
           target="_blank"
@@ -21,7 +21,14 @@
           <v-icon>mdi-github</v-icon>
         </v-btn>
 
-        <v-btn fab dark small class="mx-2" color="teal darken-4" @click="doIt">
+        <v-btn
+          fab
+          dark
+          small
+          class="ma-1 mx-md-2"
+          color="teal darken-4"
+          @click="doIt"
+        >
           <v-icon>mdi-printer</v-icon>
         </v-btn>
 
@@ -29,7 +36,7 @@
           fab
           dark
           small
-          class="mr-2"
+          class="ma-1 mr-md-2"
           color="red accent-4"
           @click="changeLanguage"
           max-height="38"
@@ -58,7 +65,7 @@
               <v-card
                 v-for="(card, index) in dictLanguage"
                 :key="lang + index"
-                class="ma-3 px-3"
+                class="ma-3 px-3 px-sm-8"
                 color="grey lighten-5"
               >
                 <div v-if="card.horizontal !== true">
@@ -79,12 +86,12 @@
                       >
                         <v-list-item-content>
                           <v-list-item-title
-                            class="text-wrap text-body-2 text-sm-body-1"
+                            class="text-wrap px-1 text-body-2 text-sm-body-1"
                           >
                             {{ field.list_item_title }}
                           </v-list-item-title>
                           <v-list-item-subtitle
-                            class="text-wrap text-caption text-sm-body-2"
+                            class="text-wrap px-1 text-caption text-sm-body-2"
                           >
                             {{ field.subtitle }}
                           </v-list-item-subtitle>
@@ -111,7 +118,7 @@
                       style="min-height: auto;"
                     >
                       <v-card-title
-                        class="pa-0 text-wrap text-truncate font-weight-bold text-caption text-sm-body-1"
+                        class="py-0 px-1 text-wrap text-truncate font-weight-bold text-caption text-sm-body-1"
                         >{{ field.card_title }}</v-card-title
                       >
                       <v-list-item
@@ -122,12 +129,12 @@
                       >
                         <v-list-item-content>
                           <v-list-item-title
-                            class="text-wrap text-caption text-sm-body-1"
+                            class="text-wrap px-1 text-caption text-sm-body-1"
                           >
                             {{ list_item.list_item_title }}
                           </v-list-item-title>
                           <v-list-item-subtitle
-                            class="text-wrap text-caption text-sm-body-2"
+                            class="text-wrap px-1 text-caption text-sm-body-2"
                           >
                             {{ list_item.subtitle }}
                           </v-list-item-subtitle>
@@ -160,7 +167,7 @@
 
               <v-card-text
                 v-if="lang == 'pl'"
-                class="text-caption text-sm-body-2"
+                class="px-3 px-sm-8 text-caption text-sm-body-2"
               >
                 Wyrażam zgodę na przetwarzanie moich danych osobowych dla
                 potrzeb niezbędnych do realizacji procesu rekrutacji zgodnie z
@@ -170,7 +177,10 @@
                 przepływu takich danych oraz uchylenia dyrektywy 95/46/WE
                 (RODO).
               </v-card-text>
-              <v-card-text v-else class="text-caption text-sm-body-2">
+              <v-card-text
+                v-else
+                class="px-3 px-sm-8 text-caption text-sm-body-2"
+              >
                 I agree to the processing of personal data provided in this
                 document for realising the recruitment process pursuant to the
                 Personal Data Protection Act of 10 May 2018 (Journal of Laws
