@@ -5,12 +5,15 @@
       class="d-flex justify-start justify-sm-center"
       relative
     >
-      <div style="position: fixed; right: 1em; top: 1em; z-index: 999">
+      <div
+        style="position: fixed; right: 1em; top: 1em; z-index: 999"
+        class="d-print-none"
+      >
         <v-btn
           fab
           dark
           small
-          class="mr-2"
+          class="ml-2"
           color="deep-purple darken-4"
           href="https://github.com/stanislawzambrzycki/stanislaw-zambrzycki-cv"
           target="_blank"
@@ -18,11 +21,15 @@
           <v-icon>mdi-github</v-icon>
         </v-btn>
 
+        <v-btn fab dark small class="mx-2" color="teal darken-4" @click="doIt">
+          <v-icon>mdi-printer</v-icon>
+        </v-btn>
+
         <v-btn
           fab
           dark
           small
-          class="ml-2"
+          class="mr-2"
           color="red accent-4"
           @click="changeLanguage"
           max-height="38"
@@ -42,7 +49,7 @@
       <v-sheet
         tile
         min-height="100vh"
-        max-width="800px"
+        max-width="700px"
         color="indigo  lighten-5"
       >
         <v-main style="height: 100%">
@@ -74,12 +81,12 @@
                           <v-list-item-title
                             class="text-wrap text-body-2 text-sm-body-1"
                           >
-                            {{ field.name }}
+                            {{ field.list_item_title }}
                           </v-list-item-title>
                           <v-list-item-subtitle
                             class="text-wrap text-caption text-sm-body-2"
                           >
-                            {{ field.value }}
+                            {{ field.subtitle }}
                           </v-list-item-subtitle>
                         </v-list-item-content>
                       </v-list-item>
@@ -200,422 +207,6 @@ export default {
   },
 
   created() {
-    let pl = {
-      cards: [
-        {
-          header: "Stanisław Zambrzycki - curriculum vitae",
-          fields: [
-            {
-              name: "Data urodzenia: 17 sierpnia 1988r.",
-              value: "",
-            },
-            {
-              name:
-                "Adres korespondencyjny: Polska, Mała Nieszawka 87-103, ul. Bydgoska 38",
-              value: "",
-            },
-            {
-              name: "Adres e-mail: stanislaw.zambrzycki@poczta.onet.pl",
-              value: "",
-            },
-            {
-              name: "Telefon kontaktowy: +48 783 741 717",
-              value: "",
-            },
-          ],
-        },
-        {
-          header: "Cele zawodowe",
-          fields: [
-            {
-              name:
-                "Pragnę rozwijać swoje zdolności programistyczne poprzez pracę w profesjonalnym środowisku.",
-              value: "",
-            },
-          ],
-        },
-        {
-          header: "Wykształcenie",
-          fields: [
-            {
-              name: "Studium Kształcenia Praktycznego TEB Edukacja w Toruniu",
-              value: "Trener Personalny, 10.2017 - 06.2018",
-            },
-            {
-              name: "Akademia Ekonomiczno-Humanistyczna w Warszawie",
-              value: "Psychologia Kliniczna, 10.2009 - 06.2014",
-            },
-            {
-              name: "Szkoła Policealna Medyczna im. Mikołaja Kopernika",
-              value: "Technik Masażysta, 10.2007 - 06.2009",
-            },
-            {
-              name:
-                "I Liceum Ogólnokształcące im. Mikołaja Kopernika w Toruniu",
-              value: "2004 - 2007",
-            },
-          ],
-        },
-        {
-          header: "Doświadczenie zawodowe",
-          fields: [
-            {
-              name: "Hotel Dwa Księżyce",
-              value: "Recepcjonista, 08.2017 - obecnie",
-            },
-            {
-              name: "DPD Polska Sp. z o.o.",
-              value: "Specjalista Obsługi Klienta, 03.2016 - 06.2017",
-            },
-            {
-              name: "'CTDP' Sp. z o.o. & Co. sp. k",
-              value: "Konsultant Telesprzedaży, 12.2015 - 02.2016",
-            },
-            {
-              name: "DataContact Center Sp. z o.o.",
-              value: "Konsultant Telesprzedaży, 03.2015 - 09.2015",
-            },
-          ],
-        },
-        {
-          horizontal: true,
-          header: "Umiejętności",
-          fields: [
-            {
-              card_title: "Informatyczne",
-
-              list_items: [
-                {
-                  list_item_title: "HTML5",
-                  subtitle: "podstawy",
-                },
-                {
-                  list_item_title: "CSS3",
-                  subtitle: "podstawy",
-                },
-                {
-                  list_item_title: "SCSS/SASS",
-                  subtitle: "podstawy",
-                },
-                {
-                  list_item_title: "VUE",
-                  subtitle: "podstawy",
-                },
-                {
-                  list_item_title: "Vuetify",
-                  subtitle: "podstawy",
-                },
-                {
-                  list_item_title: "JavaScript ES6",
-                  subtitle: "podstawy",
-                },
-                {
-                  list_item_title: "Firebase",
-                  subtitle: "podstawy",
-                },
-              ],
-            },
-
-            {
-              card_title: "Umiejętności ogólne",
-
-              list_items: [
-                {
-                  list_item_title: "Pakiet Office",
-                  subtitle: "podstawy",
-                },
-                {
-                  list_item_title: "Analityczne myślenie",
-                  subtitle: " ",
-                },
-                {
-                  list_item_title: "Duża motywacja do pracy",
-                  subtitle: " ",
-                },
-                {
-                  list_item_title: "Chęć do nauki i samorozwoju",
-                  subtitle: " ",
-                },
-                {
-                  list_item_title: "Szybkie przyswajanie wiedzy",
-                  subtitle: " ",
-                },
-              ],
-            },
-
-            {
-              card_title: "Językowe",
-
-              list_items: [
-                {
-                  list_item_title: "Angielski",
-                  subtitle: "zaawansowany",
-                },
-                {
-                  list_item_title: "Polski",
-                  subtitle: "rodzimy",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          horizontal: true,
-          header: "Zainteresowania",
-          fields: [
-            {
-              card_title: "",
-
-              list_items: [
-                {
-                  list_item_title: "Gra w go (alt. baduk/weiki)",
-                  subtitle: "",
-                },
-              ],
-            },
-
-            {
-              card_title: "",
-
-              list_items: [
-                {
-                  list_item_title: "Modowanie gier komputerowych",
-                  subtitle: "",
-                },
-              ],
-            },
-
-            {
-              card_title: "",
-
-              list_items: [
-                {
-                  list_item_title: "Trójbój siłowy",
-                  subtitle: "",
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    };
-
-    this.db
-      .collection("cv")
-      .doc("Stanisław Zambrzycki")
-      .collection("languages")
-      .doc("pl")
-      .update(pl);
-
-    let eng = {
-      cards: [
-        {
-          header: "Stanisław Zambrzycki - curriculum vitae",
-          fields: [
-            {
-              name: "Birth date: 17 sierpnia 1988r.",
-              value: "",
-            },
-            {
-              name:
-                "Postal adress: Poland, Mała Nieszawka 87-103, ul. Bydgoska 38",
-              value: "",
-            },
-            {
-              name: "Adress e-mail: stanislaw.zambrzycki@poczta.onet.pl",
-              value: "",
-            },
-            {
-              name: "Phone: +48 783 741 717",
-              value: "",
-            },
-          ],
-        },
-        {
-          header: "Career goals",
-          fields: [
-            {
-              name:
-                "I desire to develop my programming skills by working in a professional environment.",
-              value: "",
-            },
-          ],
-        },
-        {
-          header: "Education",
-          fields: [
-            {
-              name: "Study of Practical Education TEB Education in Toruniu",
-              value: "Personal trainer, 10.2017 - 06.2018",
-            },
-            {
-              name: "University of Economics and Human Sciences in Warsaw",
-              value: "Clinical psychology, 10.2009 - 06.2014",
-            },
-            {
-              name: "Nicolaus Copernicus Secondary Medical School in Toruń",
-              value: "Masseur technician, 10.2007 - 06.2009",
-            },
-            {
-              name: "Nicolaus Copernicus High School No. 1 in Toruń",
-              value: "2004 - 2007",
-            },
-          ],
-        },
-        {
-          header: "Experience",
-          fields: [
-            {
-              name: "Hotel Dwa Księżyce",
-              value: "Receptionist, 08.2017 - currently",
-            },
-            {
-              name: "DPD Polska Sp. z o.o.",
-              value: "Customer Service Specialist, 03.2016 - 06.2017",
-            },
-            {
-              name: "'CTDP' Sp. z o.o. & Co. sp. k",
-              value: "Telesales Consultant, 12.2015 - 02.2016",
-            },
-            {
-              name: "DataContact Center Sp. z o.o.",
-              value: "Telesales Consultant, 03.2015 - 09.2015",
-            },
-          ],
-        },
-        {
-          horizontal: true,
-          header: "Skills",
-          fields: [
-            {
-              card_title: "IT Skills",
-
-              list_items: [
-                {
-                  list_item_title: "HTML5",
-                  subtitle: "basics",
-                },
-                {
-                  list_item_title: "CSS3",
-                  subtitle: "basics",
-                },
-                {
-                  list_item_title: "SCSS/SASS",
-                  subtitle: "basics",
-                },
-                {
-                  list_item_title: "VUE",
-                  subtitle: "basics",
-                },
-                {
-                  list_item_title: "Vuetify",
-                  subtitle: "basics",
-                },
-                {
-                  list_item_title: "JavaScript ES6",
-                  subtitle: "basics",
-                },
-                {
-                  list_item_title: "Firebase",
-                  subtitle: "basics",
-                },
-              ],
-            },
-
-            {
-              card_title: "General skills",
-
-              list_items: [
-                {
-                  list_item_title: "Microsoft Office",
-                  subtitle: "basics",
-                },
-                {
-                  list_item_title: "Analytical thinking",
-                  subtitle: " ",
-                },
-                {
-                  list_item_title: "Motivation to work",
-                  subtitle: " ",
-                },
-                {
-                  list_item_title: "Willingness to learn",
-                  subtitle: " ",
-                },
-                {
-                  list_item_title: "Fast learning",
-                  subtitle: " ",
-                },
-              ],
-            },
-
-            {
-              card_title: "Language skills",
-
-              list_items: [
-                {
-                  list_item_title: "English",
-                  subtitle: "advanced",
-                },
-                {
-                  list_item_title: "Polish",
-                  subtitle: "native",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          horizontal: true,
-          header: "Hobbys",
-          fields: [
-            {
-              card_title: "",
-
-              list_items: [
-                {
-                  list_item_title: "Game of go (alt. baduk/weiki)",
-                  subtitle: "",
-                },
-              ],
-            },
-
-            {
-              card_title: "",
-
-              list_items: [
-                {
-                  list_item_title: "Modding of computer games",
-                  subtitle: "",
-                },
-              ],
-            },
-
-            {
-              card_title: "",
-
-              list_items: [
-                {
-                  list_item_title: "Powerlifting",
-                  subtitle: "",
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    };
-
-    this.db
-      .collection("cv")
-      .doc("Stanisław Zambrzycki")
-      .collection("languages")
-      .doc("eng")
-      .update(eng);
-
-    // console.log(pl);
-    // console.log(eng);
-
     this.db
       .collection("cv")
       .doc("Stanisław Zambrzycki")
@@ -638,8 +229,8 @@ export default {
       if (this.lang === "pl") this.lang = "eng";
       else this.lang = "pl";
     },
-    printToPDF() {
-      this.$refs.html2Pdf.generatePdf();
+    doIt() {
+      window.print();
     },
   },
 };

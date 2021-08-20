@@ -11,6 +11,9 @@ Vue.config.productionTip = false;
 new Vue({
   vuetify,
   render: (h) => h(App),
+  beforeCreate() {
+    document.title = "CV Stanisław Zambrzycki";
+  },
   beforeMount() {
     firebase.initializeApp(config);
   },
