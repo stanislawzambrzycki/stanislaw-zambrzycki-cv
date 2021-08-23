@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-sheet
       color="grey darken-1"
-      class="d-flex justify-start justify-sm-center"
+      class="d-flex justify-start justify-center"
       relative
     >
       <div
@@ -71,6 +71,7 @@
                 <div v-if="card.horizontal !== true">
                   <v-card-title
                     class="text-wrap pb-2 text-body-1 font-weight-bold  text-sm-h5"
+                    style="word-break: normal;"
                     >{{ card.header }}</v-card-title
                   >
 
@@ -112,20 +113,22 @@
                       v-for="(field, index2) in card.fields"
                       :key="index2 + lang"
                       flat
-                      class="ma-3 flex-grow-1"
+                      class="my-3 mx-1 ma-sm-3 flex-grow-1"
                       color="grey lighten-5"
                       width="aviable"
                       style="min-height: auto;"
                     >
                       <v-card-title
-                        class="py-0 px-1 text-wrap text-truncate font-weight-bold text-caption text-sm-body-1"
+                        class="py-0 px-1 text-wrap font-weight-bold text-caption text-sm-body-1"
+                        style="word-break: normal;"
                         >{{ field.card_title }}</v-card-title
                       >
+                      <!-- <div class="d-flex flex-column flex-wrap "> -->
                       <v-list-item
                         v-for="(list_item, index3) in field.list_items"
                         :key="index3 + lang"
                         two-line
-                        class="pa-0"
+                        class="pa-0 "
                       >
                         <v-list-item-content>
                           <v-list-item-title
@@ -140,6 +143,7 @@
                           </v-list-item-subtitle>
                         </v-list-item-content>
                       </v-list-item>
+                      <!-- </div> -->
                     </v-card>
                   </div>
                 </div>
